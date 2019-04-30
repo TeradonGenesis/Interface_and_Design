@@ -1,0 +1,104 @@
+.nav {
+    border: 1px solid green;
+    height: 50px;
+    padding: 10px;
+}
+
+.footer {
+    border: 1px solid green;
+    height: 50px;
+    padding: 10px;
+}
+
+.mainRow {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#banner {
+    vertical-align: middle;
+    width: 1100px;
+    margin-bottom: 30px;
+}
+
+
+
+.product {
+    width: 120px;
+
+}
+
+
+.newProducts {
+    width: 350px;
+    height: 340px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.oldProducts {
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 20px;
+    padding: 10px;
+}
+
+#mainproduct {
+    width: 290px;
+}
+
+.feature {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.companyProfile {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.featuredProduct {
+    width: 350px;
+    height: 340px;
+}
+
+.reviewArea {
+    
+    width: 100%;
+    margin-bottom: 30px;
+    margin: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.rating {
+    width:200px;
+}
+
+.socialDetail {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    margin: 10px;
+    padding: 10px;
+}
+
+.social {
+    width: 80px;
+    height: 80px;
+
+}
+
+.mapBox {
+    padding: 10px;
+}
+
+.map{
+    vertical-align: middle;
+    width: 1100px;
+}
+
