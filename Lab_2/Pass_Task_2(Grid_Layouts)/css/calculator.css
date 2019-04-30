@@ -1,0 +1,54 @@
+.nav {
+    border: 1px solid green;
+    height: 50px;
+}
+
+.footer {
+    border: 1px solid green;
+    height: 50px;
+    margin-top: 30px;
+}
+
+
+.calScreen {
+    border: 1px solid green;
+    height: 100px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.mainRow {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.memoryBut {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    border: 1px solid green;
+    padding: 20px;
+    width: 250px;
+    margin: 10px;
+}
+
+.number {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    border: 1px solid green;
+    padding: 20px;
+    width: 250px;
+    margin: 10px;
+}
+
+.biggerButton{
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    border: 1px solid green;
+    padding: 20px;
+    width: 525px;
+    margin: 10px;
+}

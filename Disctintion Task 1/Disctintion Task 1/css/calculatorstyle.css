@@ -1,0 +1,33 @@
+.mybox {
+    border: 1px solid;
+    text-align: center;
+    padding: 20px;
+}
+
+.displaybox {
+    margin-top: 10px;
+    border: 1px solid;
+    text-align: center;
+    padding:20px;
+    margin-bottom: 10px; 
+}
+
+.memorybox {
+    margin-top: 10px;
+    border: 1px solid;
+    text-align: center;
+    padding:20px;
+    margin-bottom: 10px;
+}
+
+.numberbox {
+    margin-top: 10px;
+    border: 1px solid;
+    text-align: center;
+    padding:20px;
+    margin-bottom: 10px;
+}
+
+.myrow{
+    border: 1px solid;
+}

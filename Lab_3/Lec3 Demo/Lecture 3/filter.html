@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html data-ng-app="">
+<head>
+    <title>Lecture 3 Demo - Filter</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0" />
+    <!-- Bootstrap -->
+    <link href="frameworks/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5
+    elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the
+    page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    
+    <h3>Appply Filter</h3>
+    
+    <p>Enter a string:
+        <input type = "text" name="strVar" data-ng-model = "strVar" />
+    </p>
+    <p>Format as Upper Case:
+        {{strVar | uppercase}}
+    </p>
+    <p>Format as Lower Case:
+        {{strVar | lowercase}}
+    </p>
+    
+    <br/>
+	
+	
+    <p>Enter a number:
+        <input type = "text" name="numVar" data-ng-model = "numVar">
+    </p>
+    <p>Format as Currency:
+        {{numVar | currency}}
+    </p>
+    <p>Format as Integer:
+        {{numVar | number}}
+    </p>
+    <p>
+        Format with decimal places: {{numVar | number:"3"}}
+    </p>
+    
+    <br/>
+    
+    <p>Enter a date:
+        <input type = "date" name="dteVar" data-ng-model = "dteVar">
+    </p>
+    <p>Format as Date:
+        {{dteVar | date}}</p>
+    <p>Format as Medium:
+        {{dteVar | date:"medium"}}</p>
+    <p>Format as full:
+        {{dteVar | date:"yyyy-MM-dd HH:mm:ss Z"}}</p>
+    <p>Format with symbol:
+        {{dteVar | date:"MM/dd/yyyy @ h:mma"}}</p>
+    <p>Format with text:
+        {{dteVar | date:"MM/dd/yyyy 'at' h:mma"}}
+    </p>
+    
+    <br/>
+    
+    <div data-ng-init ="students = 
+                        [{name:'Amy',age:26}, 
+                        {name:'Dolly',age:18}, 
+						{name:'Cat',age:21}, 
+						{name:'Ben',age:24}]">
+						
+        <h3>Repeat By Non-Order</h3>
+        <p>Search:
+            <input type = "text" name="searchVar" data-ng-model = "searchVar" /></p>
+        <ul data-ng-repeat="s in students | filter:searchVar">
+            <li>{{s.name}}</li>
+        </ul>
+
+        <h3>Repeat By Order</h3>
+        <table class="table table-hover">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            <tr data-ng-repeat="std in students | orderBy: 'age'">
+                <td>{{std.name}}</td>
+                <td>{{std.age}}</td>
+            </tr>
+        </table>
+    </div>
+    
+    
+    
+    <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
+    <script src="frameworks/js/jquery.min.js"></script>
+    <!-- All Bootstrap plug-ins file -->
+    <script src="frameworks/js/bootstrap.min.js"></script>
+    <!-- Basic AngularJS -->
+    <script src="frameworks/js/angular.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Units that uses Bootstrap</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,
+initial-scale=1.0" />
+    <meta name="language" content="english" />
+    <meta name="keywords" content="Units" />
+    <meta name="description" content="Bootstrap" />
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5
+elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the
+page via file:// -->
+    <!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12" data-ng-app="">
+
+                <h1>BICT Unit Search Filter</h1>
+
+                <br>
+                <p><label>Code: </label><input type="text" name="code" data-ng-model="obj.code"> </p>
+                <p><label>Description: </label><input type="text" name="description" data-ng-model="obj.desc"> </p>
+                <br>
+
+                <h2>Unit Type</h2>
+                <hr />
+                <input type="radio" name="type" data-ng-model="obj.type" value = "Core"> <label>Core</label><br>
+                <input type="radio" name="type" data-ng-model="obj.type" value = "Software Development"> <label>Software Development</label><br>
+                <input type="radio" name="type" data-ng-model="obj.type" value = "System Analysis"> <label>System Analysis</label><br>
+                <input type="radio" name="type" data-ng-model="obj.type" value = ""> <label>All</label>
+
+                <div data-ng-init="Course = 
+                [
+                {Code:'ICT10001',Description: 'Problem Solving with ICT', Credit_points: 12.5, Type: 'Core'}, 
+                {Code:'COS10005',Description: 'Web Development', Credit_points: 12.5, Type: 'Core'}, 
+                {Code:'INF10003',Description: 'Introduction to Business Information Systems', Credit_points: 12.5, Type: 'Core'}, 
+                {Code:'INF10002',Description: 'Database Analysis and Design', Credit_points: 12.5, Type: 'Core'}, 
+                {Code:'COS10009',Description: 'Introduction to Programming', Credit_points: 12.5, Type: 'Core'}, 
+                {Code:'INF30029',Description: 'Information Technology Project Management', Credit_points: 12.5, Type: 'Core'},
+                {Code:'ICT30005',Description: 'Professional Issues in Information Technology', Credit_points: 12.5, Type: 'Core'},
+                {Code:'ICT30001',Description: 'Information Technology Project', Credit_points: 12.5, Type: 'Core'}, 
+                {Code:'COS20001',Description: 'User-Centred Design', Credit_points: 12.5, Type: 'Software Development'}, 
+                {Code:'TNE10005',Description: 'Network Administration', Credit_points: 12.5, Type: 'Software Development'},
+                {Code:'COS20016',Description: 'Operating System Configuration', Credit_points: 12.5, Type: 'Software Development'},
+                {Code:'SWE20001',Description: 'Development Project 1 - Tools and Practices', Credit_points: 12.5, Type: 'Software Development'},
+                {Code:'COS20007',Description: 'Object Oriented Programming', Credit_points: 12.5, Type: 'Software Development'},
+                {Code:'COS30015',Description: 'IT Security', Credit_points: 12.5, Type: 'Software Development'},
+                {Code:'COS30043',Description: 'Interface Design and Development', Credit_points: 12.5, Type: 'Software Development'},
+                {Code:'COS30017',Description: 'Software Development for Mobile Devices', Credit_points: 12.5, Type: 'Software Development'},
+                {Code:'INF20012',Description: 'Enterprise Systems', Credit_points: 12.5, Type: 'System Analysis'},
+                {Code:'ACC10007',Description: 'Financial Information For Decison Making', Credit_points: 12.5, Type: 'System Analysis'},
+                {Code:'INF20003',Description: 'Requirements Analysis and Modelling', Credit_points: 12.5, Type: 'System Analysis'},   
+                {Code:'ACC20014',Description: 'Management Decision Making', Credit_points: 12.5, Type: 'System Analysis'}, 
+                {Code:'INF30005',Description: 'Business Process Management', Credit_points: 12.5, Type: 'System Analysis'},
+                {Code:'INF30003',Description: 'Business Information System Analysis', Credit_points: 12.5, Type: 'System Analysis'},        
+                {Code:'INF30020',Description: 'Information System Risk and Security', Credit_points: 12.5, Type: 'System Analysis'},
+                {Code:'INF30001',Description: 'System Acquisition & Implementation Management', Credit_points: 12.5, Type: 'System Analysis'},
+                ]">
+
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <tr>
+                                <th>Code</th>
+                                <th>Description</th>
+                                <th>Credit Points</th>
+                                <th>Type</th>
+                            </tr>
+                            <tr data-ng-repeat="Objects in Course | filter: {Code: obj.code, Description: obj.desc, Type: obj.type}">
+                                <td>{{Objects.Code}}</td>
+                                <td>{{Objects.Description}}</td>
+                                <td>{{Objects.Credit_points | number: 2}}</td>
+                                <td>{{Objects.Type}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+    <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- All Bootstrap plug-ins file -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Basic AngularJS -->
+    <script src="js/angular.min.js"></script>
+</body></html>

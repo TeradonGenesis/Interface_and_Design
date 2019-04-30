@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body ng-app="">
+
+    <div data-ng-init="course = [{code:'ICT10001', description:'Problem Solving with ICT'}]">
+
+        <table class="table table-hover">
+            <tr>
+                <th>Code</th>
+                <th>Desc</th>
+            </tr>
+            <tr data-ng-repeat="object in course">
+                <td>{{object.code}}</td>
+                <td>{{object.description}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div data-ng-init="students = 
+                        [{name:'ICT10001',age:26.5}, 
+                        {name:'Dolly',age:18},  
+						{name:'Cat',age:21}, 
+						{name:'Ben',age:24}]">
+
+        <h3>Repeat By Order</h3>
+        <table class="table table-hover">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            <tr data-ng-repeat="std in students">
+                <td>{{std.name}}</td>
+                <td>{{std.age}}</td>
+            </tr>
+        </table>
+    </div>
+
+</body></html>

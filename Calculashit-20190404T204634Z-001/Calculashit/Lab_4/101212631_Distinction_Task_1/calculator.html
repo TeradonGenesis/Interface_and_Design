@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app = "myApp">
+
+<head>
+
+    <title>Calculator Template using Bootstrap</title>
+    <meta name="viewport" content="width = device - width, initial sacale = 1.0 " />
+
+    <!--Bootstrap-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/calculator.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <meta charset="utf-8" />
+    <meta name="language" content="english" />
+    <meta name="keywords" content="Calculator" />
+    <meta name="description" content="Bootstrap" />
+
+</head>
+
+<body data-ng-controller="myCtrl">
+    <div class="container">
+        <!--Possible navigation row-->
+        <div class="row mainRow">
+            <div class="col-md-12 nav"><p>(A)NavBar</p></div>
+        </div>
+
+        <!--Interface row-->
+        <div class="row">
+
+            <div class="col-md-12 buttons">
+               
+               
+                <div class="row mainRow">
+                    
+                    <!--Calculator screen content-->
+                    <div class="col-md-12 calScreen">
+                       
+                           <input type = "text" value={{displayAns}} class="displayNum">
+                           
+                        
+                    </div>
+                </div>
+                
+                <!--Calculator screen row-->
+                <div class="row mainRow">
+                    
+                    <!--Calculator screen content-->
+                    <div class="col-md-12 calScreen">
+                        <input type = "text" value={{result}} class="display">
+                    </div>
+                </div>
+                
+                <!--Calculator screen row-->
+                <div class="row mainRow">
+                    
+                    <!--Calculator screen content-->
+                    <div class="col-md-12 calScreen">
+                        <p class = "memDisplay">Memory: {{mem}}</p>
+                    </div>
+                </div>
+
+                <!--Memory buttons row-->
+                <div class="row mainRow">
+                    
+                    <div class="col-md-3 memoryBut">
+                        <button type="button" class="btn btn-warning" data-ng-click = "memClear()">MRC</button></div>
+                    <div class="col-md-3 memoryBut">
+                        <button type="button" class="btn btn-warning" data-ng-click = "memRecall(value)">MR</button>
+                    </div>
+                    <div class="col-md-3 memoryBut">
+                        <button type="button" class="btn btn-warning" data-ng-click = "memMinus()">M-</button>
+                    </div>
+                    <div class="col-md-3 memoryBut">
+                         <button type="button" class="btn btn-warning" data-ng-click = "memPlus()">M+</button>
+                    </div>
+                </div>
+                
+                <!--Number and arithmetic row-->
+                <div class="row mainRow">
+                    <div class="col-md-12">
+                        <div class = "row">
+                            <div class="col-md-3 number"> 
+                                <button type="button" class="btn btn-primary" value = "7" data-ng-click="number('7')">7</button>
+                            </div>
+                            <div class="col-md-3 number">
+                                <button type="button" class="btn btn-primary" value = "8" data-ng-click="number('8')">8</button>
+                            </div>
+                            <div class="col-md-3 number">
+                                <button type="button" class="btn btn-primary" value = "9" data-ng-click="number('9')">9</button>
+                            </div>
+                            <div class="col-md-3 number">
+                                <button type="button" class="btn btn-primary" value = "/" data-ng-click="operator('/')">/</button>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class="col-md-3 number">
+                                <button type="button" class="btn btn-primary" value = "4" data-ng-click="number('4')">4</button>
+                            </div>
+                            <div class="col-md-3 number">
+                                <button type="button" class="btn btn-primary" value = "5" data-ng-click="number('5')">5</button>
+                            </div>
+                            <div class="col-md-3 number">
+                                <button type="button" class="btn btn-primary" value = "6" data-ng-click="number('6')">6</button>
+                            </div>
+                            <div class="col-md-3 number">
+                                <button type="button" class="btn btn-primary" value = "*" data-ng-click="operator('*')">*</button>
+                            </div>
+                        </div>   
+                        <div class = "row">
+                            <div class="col-md-3 number">
+                                <button type="button" class="btn btn-primary" value = "1" data-ng-click="number('1')">1</button>
+                            </div>
+                            <div class="col-md-3 number">
+                                <button type="button" class="btn btn-primary" value = "2" data-ng-click="number('2')">2</button>
+                            </div>
+                            <div class="col-md-3 number">
+                                <button type="button" class="btn btn-primary" value = "3" data-ng-click="number('3')">3</button>
+                            </div>
+                            <div class="col-md-3 number">
+                                <button type="button" class="btn btn-primary" value = "-" data-ng-click="operator('-')">-</button>
+                            </div>
+                        </div>   
+                        <div class = "row">
+                            <div class="col-md-3 number">
+                                <button type="button" class="btn btn-primary" value = "0" data-ng-click="number('0')">0</button>
+                            </div>
+                            
+                            <div class="col-md-3 number">
+                                <button type="button" class="btn btn-primary" value = "." data-ng-click="operator('.')">.</button>
+                            </div>
+                            <div class="col-md-3 number">
+                                <button type="button" class="btn btn-danger" value = "" data-ng-click="deletion()">DEL</button>
+                            </div>
+                            <div class="col-md-3 number">
+                                <button type="button" class="btn btn-primary" value = "+" data-ng-click="operator('+')">+</button>
+                            </div>
+                        </div>       
+                    </div>
+                
+                </div>
+                
+                <!--Equal and CE row-->
+                <div class="row mainRow">
+                    <div class="col-md-6 biggerButton">
+                        <button type="button" class="btn btn-danger extra" data-ng-click="operator('CE')">CE</button>
+                    </div>
+                    <div class="col-md-6 biggerButton">
+                        <button type="button" class="btn btn-danger extra" data-ng-click="calculating()">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--Footer row-->
+        <div class="row mainRow">
+
+            <div class="col-md-12 footer">(C)Footer</div>
+        </div>
+    </div>
+
+
+
+    <!--jQuery required for BootStrap's Javascript plugins) -->
+    <script src="js/jquery.min.js"></script>
+
+    <!--All Bootstrap plug-ins file -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Basic AngularJS -->
+    <script src="js/angular.min.js"></script>
+    <!--Your Controller-->
+    <script src="js/calApp.js"></script>
+</body>
+
+</html>

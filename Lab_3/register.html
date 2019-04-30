@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Register that uses Bootstrap</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,
+initial-scale=1.0" />
+    <meta name="language" content="english" />
+    <meta name="keywords" content="Units" />
+    <meta name="description" content="Bootstrap" />
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5
+elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the
+page via file:// -->
+    <!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12" data-ng-app="">
+
+                <h1>Phone Cloud Registration App</h1>
+
+                <br>
+                <p><label>Enter username: </label><input type="text" name="username" data-ng-model="Fusername"> </p>
+                <br>
+                <p><label>Enter password: </label><input type="password" name="password" data-ng-model="Fpassword"> </p>
+                <br>
+                <p><label>Re-enter password: </label><input type="password" name="repassword" data-ng-model="Frepassword"> </p>
+                <br>
+
+                <span data-ng-if="Fpassword != Frepassword">Password does not match</span>
+
+                <h2>Phone operating system</h2>
+                <hr />
+                <input type="radio" name="type" data-ng-model="system" value="Android"> <label>Android </label>
+                <input type="radio" name="type" data-ng-model="system" value="IOS"> <label>IOS </label>
+                <input type="radio" name="type" data-ng-model="system" value="Windows"> <label>Windows </label><br>
+
+                <br>
+                <h3>Phone model</h3>
+
+                <div data-ng-init=" phones = 
+                [{Model: 'HTC 8X', SystemOS: 'Android'}, 
+                {Model: 'Samsung Galaxy 7', SystemOS: 'Android'}, 
+                {Model: 'Sony Experia Z5', SystemOS: 'Android'},
+                {Model: 'IPhone 6', SystemOS: 'IOS'},
+                {Model: 'IPhone 6s', SystemOS: 'IOS'},
+                {Model: 'IPhone 6s Plus', SystemOS: 'IOS'},   
+                {Model: 'HTC One M9', SystemOS: 'Windows'},
+                {Model: 'Microsoft 950', SystemOS: 'Windows'},
+                {Model: 'Microsoft 950XL', SystemOS: 'Windows'}  
+                ]">
+                    <p>Select your phone</p>
+                    <select name="Phone" data-ng-model="phoneDropdown">
+                        <option value="">--Select--</option>
+                        <option data-ng-repeat="x in phones | filter: system">{{x.Model}}</option>
+                    </select>
+
+
+                </div>
+
+                <br>
+                <p>Summary</p>
+                <br>
+
+                <ul style="list-style-type:disc;">
+                    <li>Username: {{Fusername}}</li>
+                    <li>OS: {{system}} </li>
+                    <li>Phone: {{phoneDropdown}}</li>
+                </ul>
+
+
+
+            </div>
+        </div>
+
+    </div>
+    <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- All Bootstrap plug-ins file -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Basic AngularJS -->
+    <script src="js/angular.min.js"></script>
+</body></html>

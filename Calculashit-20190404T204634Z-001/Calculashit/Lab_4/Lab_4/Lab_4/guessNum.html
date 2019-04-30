@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="myApp">
+
+<head>
+    <title>Guessing Number that uses Bootstrap</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,
+initial-scale=1.0" />
+    <meta name="language" content="english" />
+    <meta name="keywords" content="Units" />
+    <meta name="description" content="Bootstrap" />
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/guessNum.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5
+elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the
+page via file:// -->
+    <!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body data-ng-controller="myCtrl">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+
+                <!--Showing the message-->
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+
+                    </div>
+                </div>
+
+                <!--User inputting number-->
+                <div class="row">
+                    <div class="col-xs-12 col-md-12" data-ng-model="inputNum">
+                        <h2>Number Guessing Game</h2>
+                        <br>
+                        <p>Choose a number from 1 to 100</p>
+                        <label>Input  your number here!</label>
+                        <br>
+                        <input class="number" type="number" name="inputNum" data-ng-model="guessing">
+                    </div>
+                </div>
+
+                <!--Buttons-->
+                <div class="row">
+                    <div class="col-xs-12 col-md-4">
+                        <button class="btn" data-ng-click="checking()">Check Guess!</button>
+                    </div>
+
+                    <div class="col-xs-12 col-md-4">
+                        <button class="btn" data-ng-click="givingUp()">Give Up!</button>
+                    </div>
+
+                    <div class="col-xs-12 col-md-4">
+                        <button class="btn" data-ng-click="starting()">Start!</button>
+                    </div>
+
+
+
+                </div>
+
+                <div class="row">
+                    <div data-ng-show="difference>0" class="message">Guess higher.</div>
+                    <div data-ng-show="difference<0" class="message">Guess lower.</div>
+                    <div data-ng-show="difference===0" class="message">You got it!</div>
+                    <br>
+                    <div class="showAnswer">Answer:
+                        <span data-ng-show="answer">{{original}}</span>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+    <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- All Bootstrap plug-ins file -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Basic AngularJS -->
+    <script src="js/angular.min.js"></script>
+    <!--Your Controller-->
+    <script src="js/app.js"></script>
+</body></html>

@@ -1,0 +1,230 @@
+ * { padding: 0; margin: 0;}
+
+
+nav ul {
+	background-color:black;
+}
+
+nav ul li {
+	width:15%;
+	display:inline-block;
+}
+
+nav li a:hover {
+	background-color:green;
+}
+
+nav ul li a {
+	padding:14px 16px;
+	display:block;
+	width:100%;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+	box-sizing:border-box;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    overflow: auto;
+    z-index: 1;
+	width:15%;
+}
+
+.dropdown-content li  {
+    display: block;
+	width:100%;
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+h1 {
+	text-align:center;
+}
+
+
+/*products*/
+.productGroup {
+	text-align:center;
+}
+
+.batch1 {
+	padding:10px;
+	width:30%;
+	display:inline-block;
+}
+
+.batch1 img {
+	width:100%;
+}
+
+.btn-product {
+	width:100%;
+}
+
+nav ~ .productGroup {
+	padding-top:10px;
+}
+
+.formReg th{
+	text-align:left;
+}
+
+/*account page*/
+.formAccount {
+	margin:0 auto;
+	text-align:Center;
+	padding:70px;
+	background-color:rgb(192,123,123,0.4);
+	width:60%;
+}
+
+.details {
+	width:40%;
+	display:inline-block;
+	text-align:left;
+	margin-bottom:50px;
+	vertical-align:top;
+}
+
+.profile-pic {
+	margin:0 auto;
+	width:80%;
+}
+
+.profile-pic img {
+	width:100%;
+}
+
+.formForum {
+	width:50%;
+	margin:0 auto;
+	background-color:rgba(120,123,194,0.4);
+	padding-top:20px;
+}
+
+.forumTable {
+	border:1px solid black;
+	padding:3px;
+	margin:50px;
+	box-sizing:border-box;
+}
+
+.forumTable td {
+	padding:30px;
+	border:1px solid black;
+}
+
+.forumTable .comment {
+	width:100%;
+}
+
+.forumPost {
+	text-align:Center;
+	width:100%;
+}
+
+.formForum >.submit-btn {
+	width:100%;
+	text-align:center;
+}
+
+.delete-go, #avatarChange, .avatar, #avatarRemove,.avatarRemove{
+	display:none;
+}
+
+.delete-reason {
+	display:none;
+}
+
+.delete-check {
+	display:none;
+}
+
+.delete-check:checked~.delete-reason{
+	display:block;
+}
+
+.delete-check:checked~.delete-go{
+	display:block;
+}
+
+#avatarChange:checked~.avatar{
+	display:block;
+}
+
+#avatarChange:checked~.avatarRemove {
+	display:block;
+}
+
+#quantityCheck:checked ~.quantityCheck {
+	display:block;
+}
+
+.product-container {
+	margin:10px;
+	background-color:rgba(0,0,0,0.3);
+}
+
+.product-holder, .item-holder {
+	padding:5px;
+	display:inline-block;
+	width:30%;
+	vertical-align:top;
+}
+
+.product-holder-img {
+	overflow:auto;
+	max-height:300px;
+	width:100%;
+}
+
+.product-holder-img img, .item-holder-img img{
+	width:100%;
+}
+
+.product-holder-details, .item-holder-details {
+	display:block;
+	padding:5px;
+	margin:5px;
+	margin-left:0px;
+	box-sizing:border-box;
+}
+
+.item-holder-img {
+	overflow:auto;
+	width:100%;
+}
+
+th {
+	text-align:left;
+}
+
+.related-products {
+	width:10%;
+	display:inline-block;
+	padding:5px;
+}
+
+.related-products-image img{
+	width:100%;
+}
+
+.quantityCheck,#quantityCheck,.item-submit {
+	display:none;
+}
+
+#quantityCheck:checked ~ table .quantityCheck {
+	display:block;
+}
+
+#quantityCheck:checked ~ table .item-submit {
+	display:block;
+}
+
+.tableView td, .tableView th{
+	padding:10px;
+	text-align:center;
+}

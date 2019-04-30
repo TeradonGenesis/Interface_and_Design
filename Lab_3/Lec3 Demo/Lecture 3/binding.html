@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html data-ng-app="">
+<head>
+    <title>Lecture 3 Demo - Data Binding</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap -->
+    <link href="frameworks/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5
+    elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the
+    page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <h1>Hello, world!</h1>
+    Enter your name:  <input type="text" data-ng-model="name"/>
+    <br/>
+    Good Day! <span data-ng-bind="name"></span>
+	<br/>
+	<br/>
+    Status:    <input type="text" data-ng-model="status" data-ng-model-options = "{updateOn: 'blur' }"/>
+	<br/>
+    {{status}}
+	
+    
+    <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
+    <script src="frameworks/js/jquery.min.js"></script>
+    <!-- All Bootstrap plug-ins file -->
+    <script src="frameworks/js/bootstrap.min.js"></script>
+    <!-- Basic AngularJS -->
+    <script src="frameworks/js/angular.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+

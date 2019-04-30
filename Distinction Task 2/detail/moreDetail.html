@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Units that uses Bootstrap</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,
+initial-scale=1.0" />
+    <meta name="language" content="english" />
+    <meta name="keywords" content="Units" />
+    <meta name="description" content="Bootstrap" />
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5
+elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the
+page via file:// -->
+    <!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+    <div data-ng-repeat ="Objects in Course | filter: Code">
+        <h2>Unit Code: {{Objects.Code}}</h2>
+        <br>
+        <br>
+        <ul>
+            <li>{{Objects.Code}}</li>
+            <li>{{Objects.Description}}</li>
+            <li>{{Objects.Credit_points | number:2}}</li>
+            <li>{{Objects.Type}}</li>
+        </ul>
+    </div>
+
+</body></html>

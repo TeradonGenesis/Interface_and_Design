@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>Env X Software | Env X Online Calc</title>
+<meta http-equiv="Content-Type">
+<script type="text/javascript">
+// From: http://www.dreamincode.net/forums/topic/174747-memory-functions-on-a-calculator/
+
+function result(){
+  document.Calc.Numbers.value = eval(document.Calc.Numbers.value);
+  eqFlag = false;
+}
+function deleteChar(input){
+  document.Calc.Numbers.value
+    = document.Calc.Numbers.value.substring(0, document.Calc.Numbers.value.length - 1);
+}
+function sqrRT() {
+  if (document.Calc.Numbers.value == '') { return }
+  document.Calc.Numbers.value=Math.sqrt(document.Calc.Numbers.value);
+  document.Calc.Numbers.value=document.Calc.Numbers.value;
+  eqFlag=true
+}
+function sqr() {
+  if (document.Calc.Numbers.value == '') { return }
+  document.Calc.Numbers.value=(document.Calc.Numbers.value)*(document.Calc.Numbers.value);
+  document.Calc.Numbers.value=document.Calc.Numbers.value;
+  eqFlag=true
+}
+function constant(pi) {
+//  if(document.Calc.Numbers.value == '') {return }
+//  document.Calc.Numbers.value=(document.Calc.Numbers.value)*Math.PI;
+  document.Calc.Numbers.value+=Math.PI;
+//  document.Calc.Numbers.value=document.Calc.Numbers.value;
+}
+function memory_p() {
+  if (document.Calc.Numbers.value =='') { return }
+  document.Calc.memory.value += '+'+document.Calc.Numbers.value;
+  document.Calc.memory.value=eval(document.Calc.memory.value);
+  eqFlag=true;
+  document.Calc.mem_win.value=document.Calc.memory.value;
+}
+function memory_s() {
+  if (document.Calc.Numbers.value =='') { return }
+  document.Calc.memory.value += '-'+document.Calc.Numbers.value;
+  document.Calc.memory.value=eval(document.Calc.memory.value);
+  eqFlag=true;
+  document.Calc.mem_win.value=document.Calc.memory.value;
+}
+ 
+function memory_r() {
+//  document.Calc.Numbers.value='';
+  document.Calc.Numbers.value = document.Calc.memory.value;
+  eqFlag=true;
+}
+ 
+function memory_c() {
+  document.Calc.memory.value=0;
+  document.Calc.mem_win.value='0';  
+}
+</script>
+<style type="text/css">
+.cbtn { width:36px; }
+</style>
+</head>
+<body>
+<form name="Calc">
+<table border="4">
+ <tr>
+  <td>
+	<input Type="text" name="Numbers" size="32">
+  </td>
+  <td>
+	<input Type="text" name="mem_win" size="16">
+	<input type="hidden" name="memory" value="0">
+  </td>
+ </tr>
+ <tr>
+  <td>
+	<input style="width:46px" type="button" value="BkSp" name="bspace" onclick="deleteChar(this)">
+   <br/>
+	<input class="cbtn" type="button" value="  7  " name="seven" onclick="document.Calc.Numbers.value += '7'">
+	<input class="cbtn" type="button" value="  8  " name="eight" onclick="document.Calc.Numbers.value += '8'">
+	<input class="cbtn" type="button" value="  9  " name="nine" onclick="document.Calc.Numbers.value += '9'">
+	<input class="cbtn" type="button" value="  /  " name="divide" onclick="document.Calc.Numbers.value += ' / '">
+	<input class="cbtn" type="button" value=" sqrt " name="sq_root" onclick="sqrRT()">
+   <br/>
+	<input class="cbtn" type="button" value="  4  " name="four" onclick="document.Calc.Numbers.value += '4'">
+	<input class="cbtn" type="button" value="  5  " name="five" onclick="document.Calc.Numbers.value += '5'">
+	<input class="cbtn" type="button" value="  6  " name="six" onclick="document.Calc.Numbers.value += '6'">
+	<input class="cbtn" type="button" value="  *  " name="multiply" onclick="document.Calc.Numbers.value += ' * '">
+	<input class="cbtn" type="button" value=" sqr " name="square" onclick="sqr()">
+   <br/>
+	<input class="cbtn" type="button" value="  1  " name="one" onclick="document.Calc.Numbers.value += '1'">
+	<input class="cbtn" type="button" value="  2  " name="two" onclick="document.Calc.Numbers.value += '2'">
+	<input class="cbtn" type="button" value="  3  " name="three" onclick="document.Calc.Numbers.value += '3'">
+	<input class="cbtn" type="button" value="  -  " name="subtract" onclick="document.Calc.Numbers.value += ' - '">
+	<input class="cbtn" type="button" value="  pi  " name="pi" onclick="constant('pi')">
+   <br/>
+	<input class="cbtn" type="button" value="  C  " name="clear" onclick="document.Calc.Numbers.value = ''">
+	<input class="cbtn" type="button" value="  0  " name="zero" onclick="document.Calc.Numbers.value += '0'">
+	<input class="cbtn" type="button" value="  .  " name="decimal" onclick="document.Calc.Numbers.value += '.'">
+	<input class="cbtn" type="button" value="  +  " name="add" onclick="document.Calc.Numbers.value += '+'">
+	<input class="cbtn" type="button" value="  =  " name="equal" onclick="result()">
+  </td>
+  <td valign="top">
+	<input class="cbtn" type="button" value="M+" name="memory_add" onclick="memory_p()">
+	<input class="cbtn" type="button" value="M-" name="memory_subract" onclick="memory_s()">
+   <br>
+	<input class="cbtn" type="button" value="MR" name="memory_read" onclick="memory_r()">
+	<input class="cbtn" type="button" value="MC" name="memory_clear" onclick="memory_c()">
+  </td>
+ </tr>
+</table>
+</form>
+</body>
+</html>

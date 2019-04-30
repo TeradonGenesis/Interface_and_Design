@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="calculatorApp">
+
+<head>
+    <link rel="stylesheet" href="css/calculatorstyle.css">
+    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initialscale=1.0" />
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+     <script src="js/html5shiv.js"></script>
+     <script src="js/respond.min.js"></script>
+     <![endif]-->
+</head>
+
+<body data-ng-controller="myCalculator">
+    <div class="container">
+        <div class=”row”>
+            <!--Your calculator code here -->
+            <div class="col-md-12 col-xs-12 displaybox">
+                <p>Display
+                <input type="text" class="displayOutput" name="displayOutput" value={{output}}>
+                </p>
+                <p>Answer
+                <input type="text" class="answerOutput" name="answerOutput" value = {{result}}>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-xs-3 memorybox">
+                <button type="button" data-ng-click="mRecall(value)" class="button">MR
+                </button>
+            </div>
+            <div class="col-md-3 col-xs-3 memorybox">
+                <button type="button" data-ng-click="mAdding()" class="button">MR+
+                </button>
+            </div>
+            <div class="col-md-3 col-xs-3 memorybox">
+                <button type="button" data-ng-click="mSubtracting()" class="button">MR-
+                </button>
+            </div>
+            <div class="col-md-3 col-xs-3 memorybox">
+                <button type="button" data-ng-click="mReset()" class="button">MC
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-xs-3 numberbox">
+                <button type="button" data-ng-click='updateOutput("7")' class="button">7
+                </button>
+            </div>
+            <div class="col-md-3 col-xs-3 numberbox">
+                <button type="button" data-ng-click='updateOutput("8")' class="button">8
+                </button>
+            </div>
+            <div class="col-md-3 col-xs-3 numberbox">
+                <button type="button" data-ng-click='updateOutput("9")' class="button">9
+                </button>
+            </div>
+            <div class="col-md-3 col-xs-3 numberbox">
+                <button type="button" data-ng-click='aOperators("+")' data-ng-disabled="operatorClicked" class="button">+
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-xs-3 numberbox">
+                <button type="button" data-ng-click='updateOutput("4")' class="button">4
+                </button>
+            </div>
+            <div class="col-md-3 col-xs-3 numberbox">
+                <button type="button" data-ng-click='updateOutput("5")' class="button">5
+                </button>
+            </div>
+            <div class="col-md-3 col-xs-3 numberbox">
+                <button type="button" data-ng-click='updateOutput("6")' class="button">6
+                </button>
+            </div>
+            <div class="col-md-3 col-xs-3 numberbox">
+                <button type="button" data-ng-click='aOperators("-")' data-ng-disabled="operatorClicked" class="button">-
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-xs-3 numberbox">
+                <button type="button" data-ng-click='updateOutput("1")' class="button">1
+                </button>
+            </div>
+            <div class="col-md-3 col-xs-3 numberbox">
+                <button type="button" data-ng-click='updateOutput("2")' class="button">2
+                </button>
+            </div>
+            <div class="col-md-3 col-xs-3 numberbox">
+                <button type="button" data-ng-click='updateOutput("3")' class="button">3
+                </button>
+            </div>
+            <div class="col-md-3 col-xs-3 numberbox">
+                <button type="button" data-ng-click='aOperators("*")' data-ng-disabled="operatorClicked" class="button">*
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-xs-3 numberbox">
+                <button type="button" data-ng-click='updateOutput("0")' class="button">0
+                </button>
+            </div>
+            <div class="col-md-3 col-xs-3 numberbox">
+                <button type="button" data-ng-click='updateOutput("00")' class="button">00
+                </button>
+            </div>
+            <div class="col-md-3 col-xs-3 numberbox">
+                <button type="button" data-ng-click='aOperators(".")' data-ng-disabled="operatorClicked" class="button">.
+                </button>
+            </div>
+            <div class="col-md-3 col-xs-3 numberbox">
+                <button type="button" data-ng-click='aOperators("/")' data-ng-disabled ="operatorClicked" class="button">/
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-xs-6 numberbox">
+                <button type="button" data-ng-click="reset()" class="button2">CE
+                </button>
+            </div>
+             <div class="col-md-6 col-xs-6 numberbox">
+                <button type="button" data-ng-click="calculating()" class="button2">=
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- All Bootstrap plug-ins file -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/calculator-app.js"></script>
+</body></html>

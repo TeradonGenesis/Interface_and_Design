@@ -1,0 +1,28 @@
+.myrow{
+    border: 1px solid;
+}
+
+.mybox{
+    border: 1px solid black;
+    padding: 30px;
+}
+
+.mybox1{
+    border: 1px solid black;
+    padding: 30px;
+    height: 442px;
+}
+
+.mybox2{
+    border: 1px solid black;
+    padding: 30px;
+    height: 338px;
+}
+
+.mybox3{
+    
+    border: 1px solid black;
+    padding: 30px;
+    height: 104px;
+    
+}

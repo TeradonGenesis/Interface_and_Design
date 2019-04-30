@@ -1,0 +1,26 @@
+.row {
+    text-align: center;
+    margin: 5px;
+}
+
+.number {
+    margin: 10px;
+    text-align: center;
+}
+
+.numBox {
+    text-align:  center;
+    font-size: 30px;
+}
+
+.border {
+    border-style:double;
+    border-color: black;
+    height: 200px;
+    
+}
+
+h4 {
+    color: red;
+}
+

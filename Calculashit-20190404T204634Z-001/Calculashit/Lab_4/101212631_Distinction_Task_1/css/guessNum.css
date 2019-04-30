@@ -1,0 +1,17 @@
+.row {
+    text-align: center;
+    margin: 5px;
+}
+
+.number {
+    margin: 10px;
+    text-align: center;
+}
+
+.btn{
+    float: none;
+    vertical-align: middle;
+    width: 150px;
+    margin: 20px;
+    
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html data-ng-app="">
+<head>
+    <title>Lecture 3 Demo - Condition Check</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0" />
+    <!-- Bootstrap -->
+    <link href="frameworks/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5
+    elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the
+    page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <h1>Condition Check</h1>
+    <p>
+        <label>Checkbox Input:
+            <input type="checkbox" name="chkVar" data-ng-model = "chkVar" data-ng-init = "chkVar=true" />
+        </label>
+        <br/>
+        Checkbox status:
+        <span data-ng-if="chkVar">
+            Uncheck checkbox to remove this text.
+        </span>
+    </p>
+    <p>
+        <label>Lecturer Name:
+            <input type="text" name="chkVar1" data-ng-model="chkVar1" />
+        </label><br/>
+        <span data-ng-show="chkVar1 == 'Ong Chin Ann'">
+            Hello Boss
+        </span>
+        <span data-ng-hide="chkVar1 == 'Ong Chin Ann'">
+            You are not my boss, get off!!!
+        </span>
+    </p>
+    
+    
+    <p>Enter a Unit Code:
+        <input type = "text" name="strVar2" data-ng-model = "strVar2">
+    </p>
+    <div data-ng-switch="strVar2">
+        <div data-ng-switch-when="cos30043">
+            <h1>IDD</h1>
+            <p>Interface design and Development</p>
+        </div>
+        <div data-ng-switch-when="cos10011">
+            <h1>CWA</h1>
+            <p>Creating Web Applications</p>
+        </div>
+        <div data-ng-switch-when="cos30023">
+            <h1>WAD</h1>
+            <p>Web Applications Development</p>
+        </div>
+        <div data-ng-switch-default>
+            <h1>Default</h1>
+            <p>Type a unit code (lowercase)</p>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
+    <script src="frameworks/js/jquery.min.js"></script>
+    <!-- All Bootstrap plug-ins file -->
+    <script src="frameworks/js/bootstrap.min.js"></script>
+    <!-- Basic AngularJS -->
+    <script src="frameworks/js/angular.min.js"></script>
+</body>
+</html>
