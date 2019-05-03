@@ -1,0 +1,38 @@
+
+.btn {
+    border-radius:0px !important;
+}
+
+.jumBut {
+    color: black;
+    background-color: white;
+    width: 180px;
+    margin: 10px;
+}
+
+.lead {
+    display: inline-block;
+}
+
+.jumbotron-fluid{
+    width: 100%;
+    height: 550px;
+    background: url('../images/homepage2.jpg');
+    background-size: cover;
+    background-position: center center;
+    padding:40px;
+
+}
+
+.jumbotron-description {
+    float: right;
+    margin-top: 40px;
+    margin-bottom:40px;
+    align-items: right;
+}
+
+.jumbotron-description h1{
+    min-width: 180px;
+    font-size: 50px;
+    color: white;
+}

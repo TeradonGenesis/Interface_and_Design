@@ -1,0 +1,31 @@
+
+
+.mybox{
+    border: 1px solid green;
+/*    padding: 30px;*/
+}
+
+.mybox_2{
+    border: 1px solid green;
+/*    padding: 30px;*/
+    height: 470px;
+}
+
+.mybox_3{
+    border: 1px solid green;
+    height: 300px;
+    
+}
+
+.mybox_4{
+    border: 1px solid green;
+    height: 100px;
+    
+}
+
+.mybox_5{
+    border: 1px solid green;
+    height: 167px;
+    
+}
+
