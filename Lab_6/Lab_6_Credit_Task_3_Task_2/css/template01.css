@@ -1,3 +1,4 @@
+/*Start point for nav and jumbotron*/
 .btn {
     border-radius: 0px !important;
 }
@@ -5,6 +6,13 @@
 .navbar {
     background-color: white;
 }
+
+.shop {
+    height: 10px;
+    background-color: black;
+    display: block;
+}
+
 
 @media (max-width:767px) {
     .navbar-header {
@@ -42,13 +50,13 @@
     }
 }
 
-.searchInput{
+.searchInput {
     float: right;
     padding-top: 25px;
     padding-left: 150px;
 }
 
-.form-control{
+.form-control {
     width: 300px;
 }
 
@@ -126,4 +134,31 @@
     min-width: 180px;
     font-size: 50px;
     color: white;
+}
+
+/*End point for nav and jumbotron*/
+
+/*Starting point for main product*/
+
+.Main {
+    margin-top: 50px;
+}
+
+
+.explanation {
+    padding-left: 30px;
+}
+
+.explanation > h2 {
+    font-size: 26px
+}
+
+.explanation > p {
+       font-size: 17px;
+    }
+
+@media (max-width: 767px) {
+    .explanation > p {
+        text-align: center;
+    }
 }
