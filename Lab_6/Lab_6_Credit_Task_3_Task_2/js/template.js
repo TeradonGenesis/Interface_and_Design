@@ -21,6 +21,25 @@ app.controller('myCtrl', function ($scope) {
     }, {
         pic: 'images/logo6.png'
     }];
+    
+    $scope.extra = [{pic: 'images/extra1.png', description: 'Free Worldwide Shipping'
+    }, {
+        pic: 'images/extra2.png', description: '30 Days Return'
+    }, {
+        pic: 'images/extra3.png', description: '24 Months Warranty'
+    }, {
+        pic: 'images/extra4.png', description: '100% Safe & Secure Checkout'
+    }];
+    
+    $scope.instagram = [{
+        pic: 'images/other5.jpg'
+    }, {
+        pic: 'images/other2.jpg'
+    }, {
+        pic: 'images/other3.jpg'
+    }, {
+        pic: 'images/other4.jpg'
+    }];
 
 });
 
@@ -117,3 +136,37 @@ app.directive('companyLogo', function () {
 
     return direc;
 });
+
+app.directive('extraStuff', function () {
+    "use strict";
+    var direc = {}, // Create an empty object
+        linkFunction = function (scope, element, attributes) {
+            scope.pic = attributes.pic;
+            scope.description = attributes.description;
+        };
+
+    direc.restrict = 'EA';
+    //E - Element, A - Attribute, C - Class, M - Comment
+    direc.link = linkFunction;
+    direc.template = '<div class="col-xs-6 col-md-3 extracol"><div class="extracolin"><img src={{pic}} class="extra" alt="extra" /><p>{{description}}</p></div></div>'; // text bind to the scope.text in linkFunction
+    direc.scope = {}; //Special Setting to avoid instance's scope overring.
+
+    return direc;
+});
+
+app.directive('extraInstagram', function () {
+    "use strict";
+    var direc = {}, // Create an empty object
+        linkFunction = function (scope, element, attributes) {
+            scope.pic = attributes.pic;
+        };
+
+    direc.restrict = 'EA';
+    //E - Element, A - Attribute, C - Class, M - Comment
+    direc.link = linkFunction;
+    direc.template = '<div class="col-xs-6 col-md-3 othercol"><img src={{pic}} class="img-responsive" alt="other" /></div>'; // text bind to the scope.text in linkFunction
+    direc.scope = {}; //Special Setting to avoid instance's scope overring.
+
+    return direc;
+});
+

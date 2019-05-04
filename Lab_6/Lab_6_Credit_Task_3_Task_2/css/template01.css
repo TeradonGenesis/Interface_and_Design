@@ -1,4 +1,10 @@
 /*Start point for nav and jumbotron*/
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .btn {
     border-radius: 0px !important;
 }
@@ -84,7 +90,7 @@
 
 @media (max-width: 767px) {
     .jumBut {
-        margin: 8px;
+        margin: 5px;
     }
 
 }
@@ -407,4 +413,20 @@ main-product1 > h4 > p {
 
 .video3 {
     padding-right: 50px;
+}
+
+.footer {
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: darkslategrey;
+    color: white;
+}
+
+@media (max-width: 767px) {
+    .footer {
+        text-align: center;
+        padding:10px;
+    }
 }
