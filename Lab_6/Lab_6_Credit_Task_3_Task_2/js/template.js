@@ -112,7 +112,7 @@ app.directive('companyLogo', function () {
     direc.restrict = 'EA';
     //E - Element, A - Attribute, C - Class, M - Comment
     direc.link = linkFunction;
-    direc.template = '<div class="col-xs-4 col-md-2 com"><img data-ng-src={{pic}} class="img-responsive" alt="rating" class="logo" /></div>'; // text bind to the scope.text in linkFunction
+    direc.template = '<div class="col-xs-4 col-md-2 com"><img data-ng-src={{pic}} class="img-responsive" alt="logo" class="logo" /></div>'; // text bind to the scope.text in linkFunction
     direc.scope = {}; //Special Setting to avoid instance's scope overring.
 
     return direc;
