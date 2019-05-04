@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-ng-app="myApp">
 
 <head>
 
@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid" data-ng-controller="myCtrl">
 
         <!--The shopping cart row-->
         <div class="row shop">
@@ -89,6 +89,7 @@
             </div>
 
         </div>
+        
 
         <!--Carousell Main Product Row-->
         <div class="row Main">
@@ -104,34 +105,29 @@
                     <div class="carousel-inner">
                         <div class="item active">
                             <div class="row">
-                                <div class="col-xs-12 col-md-4"><a href="#"><img src="http://placehold.it/500/bbbbbb/fff&amp;text=1" class="img-responsive"></a></div>
-                                <div class="hidden-xs hidden-sm col-md-4"><a href="#"><img src="http://placehold.it/500/bbbbbb/fff&amp;text=1" class="img-responsive"></a></div>
-                                <div class="hidden-xs hidden-sm col-md-4"><a href="#"><img src="http://placehold.it/500/bbbbbb/fff&amp;text=1" class="img-responsive"></a></div>
+                                <main-product1 data-ng-repeat ="p in mainProduct1" pic={{p.Pic}} type={{p.Type}} price={{p.Price}} colour={{p.Colour}}></main-product1>
+                                
                             </div>
                         </div>
                         <div class="item">
                             <div class="row">
-                                <div class="col-xs-12 col-md-4"><a href="#"><img src="http://placehold.it/500/bbbbbb/fff&amp;text=2" class="img-responsive"></a></div>
-                                <div class="hidden-xs hidden-sm col-md-4"><a href="#"><img src="http://placehold.it/500/bbbbbb/fff&amp;text=2" class="img-responsive"></a></div>
-                                <div class="hidden-xs hidden-sm col-md-4"><a href="#"><img src="http://placehold.it/500/bbbbbb/fff&amp;text=2" class="img-responsive"></a></div>
+                                <main-product2 data-ng-repeat ="p in mainProduct2" pic={{p.Pic}} type={{p.Type}} price={{p.Price}} colour={{p.Colour}}></main-product2>
                             </div>
                         </div>
                         <div class="item">
                             <div class="row">
-                                <div class="col-xs-12 col-md-4"><a href="#"><img src="http://placehold.it/500/bbbbbb/fff&amp;text=3" class="img-responsive"></a></div>
-                                <div class="hidden-xs hidden-sm col-md-4"><a href="#"><img src="http://placehold.it/500/bbbbbb/fff&amp;text=3" class="img-responsive"></a></div>
-                                <div class="hidden-xs hidden-sm col-md-4"><a href="#"><img src="http://placehold.it/500/bbbbbb/fff&amp;text=3" class="img-responsive"></a></div>
+                                <main-product3 data-ng-repeat ="p in mainProduct3" pic={{p.Pic}} type={{p.Type}} price={{p.Price}} colour={{p.Colour}}></main-product3>
                             </div>
                         </div>
                     </div>
 
                     <!-- Controls -->
                     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
                     <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
@@ -225,6 +221,11 @@
 
     <!--All Bootstrap plug-ins file -->
     <script src="js/bootstrap.min.js"></script>
+    
+        <!-- Basic AngularJS -->
+    <script src="js/angular.min.js"></script>
+    <!--Your Controller-->
+    <script src="js/template.js"></script>
 </body>
 
 </html>

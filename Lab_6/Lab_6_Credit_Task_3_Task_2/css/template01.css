@@ -83,6 +83,14 @@
 }
 
 @media (max-width: 767px) {
+    .jumBut {
+        margin: 8px;
+    }
+
+}
+
+
+@media (max-width: 767px) {
     .navbar-nav > li > a {
         line-height: 20px;
         padding-top: 10px;
@@ -96,7 +104,7 @@
 
 @media (max-width: 767px) {
     .lead {
-        margin-top: 230px;
+        margin-top: 300px;
     }
 }
 
@@ -136,6 +144,32 @@
     color: white;
 }
 
+@media (max-width: 767px) {
+    .jumbotron-description h1 {
+
+        font-size: 38px;
+        text-align: center;
+
+    }
+}
+
+@media (max-width: 767px) {
+    .jumbotron-description p {
+
+        font-size: 16px;
+        text-align: center;
+
+    }
+}
+
+@media (max-width: 767px) {
+    .jumbotron-description {
+        margin-right: 13px;
+        margin-top: 50px;
+
+    }
+}
+
 /*End point for nav and jumbotron*/
 
 /*Starting point for main product*/
@@ -146,19 +180,56 @@
 
 
 .explanation {
-    padding-left: 30px;
+    padding-left: 70px;
+    padding-top: 200px;
+}
+
+@media (max-width: 767px) {
+    .explanation {
+        padding-left: 15px;
+        padding-top: 0px;
+    }
 }
 
 .explanation > h2 {
     font-size: 26px
 }
 
-.explanation > p {
-       font-size: 17px;
+@media (max-width: 767px) {
+    .explanation > h2 {
+        font-size: 24px
     }
+}
+
+.explanation > p {
+    font-size: 17px;
+}
 
 @media (max-width: 767px) {
     .explanation > p {
         text-align: center;
     }
+}
+
+@media (max-width: 767px) {
+    .explanation > h2 {
+        text-align: center;
+    }
+}
+
+.carousel-control.left, .carousel-control.right {
+   background-image:none !important;
+   filter:none !important;
+}
+
+.carousel-control {
+    background-color: black;
+    width: 40px;
+    height:60px;
+    margin-top: 210px;
+    padding-top: 20px;
+}
+
+main-product1 > h4 > p{
+    text-align: center;
 }
