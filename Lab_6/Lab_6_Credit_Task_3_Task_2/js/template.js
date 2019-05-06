@@ -56,7 +56,7 @@ app.directive('mainProduct1', function () {
     direc.restrict = 'EA';
     //E - Element, A - Attribute, C - Class, M - Comment
     direc.link = linkFunction;
-    direc.template = '<div class="col-xs-12 col-md-4"><center><a href="#"><img data-ng-src={{pic}} class="img-responsive"></a><br/><h4>{{type}}</h4>{{price}} | {{colour}} Color<br/><br/><button class="btn btn-light">View Collection</button></div></center>'; // text bind to the scope.text in linkFunction
+    direc.template = '<div class="col-xs-12 col-md-4"><center><a href="#"><img data-ng-src={{pic}} class="img-responsive"></a><br/><h4>{{type}}</h4>{{price}} | {{colour}} Color<br/><br/><button class="btn btn-light jumBut3">View Collection</button></div></center>'; // text bind to the scope.text in linkFunction
     direc.scope = {}; //Special Setting to avoid instance's scope overring.
 
     return direc;
@@ -75,7 +75,7 @@ app.directive('mainProduct2', function () {
     direc.restrict = 'EA';
     //E - Element, A - Attribute, C - Class, M - Comment
     direc.link = linkFunction;
-    direc.template = ' <div class="hidden-xs hidden-sm col-md-4"><center><a href="#"><img data-ng-src={{pic}} class="img-responsive"></a><br/><h4>{{type}}</h4>{{price}} | {{colour}} Color<br/><br/><button class="btn btn-light">View Collection</button></div></center>'; // text bind to the scope.text in linkFunction
+    direc.template = ' <div class="hidden-xs hidden-sm col-md-4"><center><a href="#"><img data-ng-src={{pic}} class="img-responsive"></a><br/><h4>{{type}}</h4>{{price}} | {{colour}} Color<br/><br/><button class="btn btn-light jumBut3">View Collection</button></div></center>'; // text bind to the scope.text in linkFunction
     direc.scope = {}; //Special Setting to avoid instance's scope overring.
 
     return direc;

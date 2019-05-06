@@ -1,5 +1,9 @@
 /*Start point for nav and jumbotron*/
 
+strong {
+    font-size: 32px;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -62,6 +66,13 @@ a {
     padding-left: 150px;
 }
 
+@media (max-width:767px) {
+    .searchInput {
+        padding-top: 25px;
+        padding-left: 0px;
+    }
+}
+
 .form-control {
     width: 300px;
 }
@@ -90,7 +101,7 @@ a {
 
 @media (max-width: 767px) {
     .jumBut {
-        margin: 5px;
+        margin: none;
     }
 
 }
@@ -144,17 +155,18 @@ a {
     font-size: 18px;
 }
 
-.jumbotron-description h1 {
+.title {
     min-width: 180px;
     font-size: 50px;
     color: white;
 }
 
 @media (max-width: 767px) {
-    .jumbotron-description h1 {
+    .title {
 
         font-size: 38px;
         text-align: center;
+        padding-left: 40px;
 
     }
 }
@@ -246,6 +258,7 @@ main-product1 > h4 > p {
 /*Starting point for reviews*/
 
 .box {
+    text-align: center;
     padding: 10px;
 }
 
@@ -427,6 +440,25 @@ main-product1 > h4 > p {
 @media (max-width: 767px) {
     .footer {
         text-align: center;
-        padding:10px;
+        padding: 10px;
     }
+}
+
+.jumBut3 {
+    text-align: center;
+    font-size: 16px;
+    color: black;
+    background-color: white;
+    border width: 200px;
+    height: 60px;
+    margin: 10px;
+    border: 3px solid black;
+}
+
+.explore {
+    font-size: 28px;
+}
+
+.input-group-btn {
+    padding-top: 25px;
 }
