@@ -1,0 +1,169 @@
+[
+    {
+        "code": "ICT10001",
+        "description": "Problem Solving with ICT",
+        "credit_points": 12.5,
+        "type": "Core"
+    }, 
+    {
+        "code": "COS10005",
+        "description": "Web Development",
+        "credit_points": 12.5,
+        "type": "Core"
+    }, 
+    
+    {
+        "code": "INF10003",
+        "description": "Introduction to Business Information Systems",
+        "credit_points": 12.5,
+        "type": "Core"
+    }, 
+    
+    {
+        "code": "INF10002",
+        "description": "Database Analysis and Design",
+        "credit_points": 12.5,
+        "type": "Core"
+    }, 
+    
+    {
+        "code": "COS10009",
+        "description": "Introduction to Programming",
+        "credit_points": 12.5,
+        "type": "Core"
+    }, 
+    
+    {
+        "code": "INF30029",
+        "description": "Information Technology Project Management",
+        "credit_points": 12.5,
+        "type": "Core"
+    }, 
+    
+    {
+        "code": "ICT30005",
+        "description": "Professional Issues in Information Technology",
+        "credit_points": 12.5,
+        "type": "Core"
+    }, 
+    
+    {
+        "code": "ICT30001",
+        "description": "Information Technology Project",
+        "credit_points": 12.5,
+        "type": "Core"
+    }, 
+    
+    {
+        "code": "COS20001",
+        "description": "User-Centred Design",
+        "credit_points": 12.5,
+        "type": "Software Development"
+    },
+            
+    {
+        "code": "TNE10005",
+        "description": "Network Administration",
+        "credit_points": 12.5,
+        "type": "Software Development"
+    },
+            
+    {
+        "code": "COS20016",
+        "description": "Operating System Configuration",
+        "credit_points": 12.5,
+        "type": "Software Development"
+    },
+           
+    {
+        "code": "SWE20001",
+        "description": "Development Project 1 - Tools and Practices",
+        "credit_points": 12.5,
+        "type": "Software Development"
+    },
+    
+    {
+        "code": "COS20007",
+        "description": "Object Oriented Programming",
+        "credit_points": 12.5,
+        "type": "Software Development"
+    },
+    
+    {
+        "code": "COS30015",
+        "description": "IT Security",
+        "credit_points": 12.5,
+        "type": "Software Development"
+    },
+            
+    {
+        "code": "COS30043",
+        "description": "Interface Design and Development",
+        "credit_points": 12.5,
+        "type": "Software Development"
+    },
+            
+    {
+        "code": "COS30017",
+        "description": "Software Development for Mobile Devices",
+        "credit_points": 12.5,
+        "type": "Software Development"
+    },
+    
+    {
+        "code": "INF20012",
+        "description": "Enterprise Systems",
+        "credit_points": 12.5,
+        "type": "System Analysis"
+    },
+    
+    {
+        "code": "ACC10007",
+        "description": "Financial Information For Decison Making",
+        "credit_points": 12.5,
+        "type": "System Analysis"
+    },
+            
+    {
+        "code": "INF20003",
+        "description": "Requirements Analysis and Modelling",
+        "credit_points": 12.5,
+        "type": "System Analysis"
+    },
+    
+            
+    {
+        "code": "ACC20014",
+        "description": "Management Decision Making",
+        "credit_points": 12.5,
+        "type": "System Analysis"
+    },
+            
+    {
+        "code": "INF30005",
+        "description": "Business Process Management",
+        "credit_points": 12.5,
+        "type": "System Analysis"
+    },
+            
+    {
+        "code": "INF30003",
+        "description": "Business Information System Analysis",
+        "credit_points": 12.5,
+        "type": "System Analysis"
+    },
+    
+    {
+        "code": "INF30020",
+        "description": "Information System Risk and Security",
+        "credit_points": 12.5,
+        "type": "System Analysis"
+    },
+    
+    {
+        "code": "INF30001",
+        "description": "System Acquisition & Implementation Management",
+        "credit_points": 12.5,
+        "type": "System Analysis"
+    }
+]

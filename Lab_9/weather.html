@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="myApp">
+
+<head>
+    <title>Units that uses Bootstrap</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,
+initial-scale=1.0" />
+    <meta name="language" content="english" />
+    <meta name="keywords" content="Units" />
+    <meta name="description" content="Bootstrap" />
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5
+elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the
+page via file:// -->
+    <!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+    <div class="container" data-ng-controller="locationController">
+      
+       <!--Row for the user to input their location -->
+        <div class="row">
+           <div class = "col-xs-12 col-md-12">
+               Search for input location
+           </div>
+            
+        </div>
+        
+        <!--Row to show the weather in the input area and also its local time -->
+        <div class = "row">
+            <div class = "col-xs-12 col-md-12" data-ng-repeat = "area in currentLocation">
+                <p>Weather in {{area.EnglishName}}, {{area.AdministrativeArea.EnglishName}}, {{area.Country.EnglishName}} </p> 
+                <p>Local time: {{ clock | date:'MMM dd yyyy h:mm:ss a'}}</p>
+            </div>
+        </div>
+        
+        <!--Shows the temperature and weather of the location -->
+        <div class = "row" data-ng-repeat = "condition in currentCondition">
+            <div class = "col-xs-12 col-md-6">
+                <p>Temperature: {{condition.Temperature.Metric.Value}} {{condition.Temperature.Metric.Unit}}</p>
+            </div>
+            <div class = "col-xs-12 col-md-6">
+                <p>Weather: {{condition.WeatherText}}</p> <br/>
+                
+            </div>
+        </div>
+        
+        <!--Shows the wind speed, humidity and weather pressure of the location -->
+        <div class = "row" data-ng-repeat = "condition in currentCondition">
+            <div class = "col-xs-12 col-md-4">
+                <p>Wind speed: {{condition.Wind.Speed.Metric.Value}} {{condition.Wind.Speed.Metric.Unit}}</p> 
+            </div>
+            <div class = "col-xs-12 col-md-4">
+                <p>Humidity: {{condition.RelativeHumidity}} %</p>
+            </div>
+            <div class = "col-xs-12 col-md-4">
+                <p>Pressure: {{condition.Pressure.Imperial.Value}} {{condition.Pressure.Imperial.Unit}}</p> 
+                <p>{{hour[0]}}</p>
+            </div>
+        </div>
+        
+        <!--12 hours of hourly forecast within a day using a highchart -->
+        <div class = "row">
+            <div class = "col-xs-12 col-md-12">
+                12 hours of hourly forecast in a chart
+                <line-Highchart chart={{renderChart}}></line-Highchart>
+            </div>
+        </div>
+        
+        <!--Weather forecast for the next five days -->
+        <div class = "row">
+            <div class = "col-xs-4 col-md-2 col-md-offset-2">
+                Monday Forecast
+            </div>
+            <div class = "col-xs-4 col-md-2">
+                Tuesday Forecast
+            </div>
+            <div class = "col-xs-4 col-md-2">
+                Wednesday Forecast
+            </div>
+            <div class = "col-xs-6 col-md-2">
+                Thursday Forecast
+            </div>
+            <div class = "col-xs-6 col-md-2">
+                Friday Forecast
+            </div>
+        </div>
+        
+        <!--The current condition in 24 hours using a highchart -->
+        <div class ="row">
+            <div class = "col-xs-12 col-md-12">
+                24 hours of historical current condition chart
+            </div>
+        </div>
+        
+        
+
+    </div>
+    <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- All Bootstrap plug-ins file -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Basic AngularJS -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/units.js"></script>
+    
+    <!-- HighChartJS -->
+    <script src="code/highcharts.js"></script>
+    <script src="code/modules/exporting.js"></script>
+    <script src="code/modules/offline-exporting.js"></script>
+</body></html>
