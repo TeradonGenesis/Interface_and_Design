@@ -68,7 +68,8 @@ app.controller("locationController", function ($scope, $http, $interval) {
                 var i,
                     j,
                     date,
-                    h;
+                    h,
+                value;
                     
 
 
@@ -77,13 +78,16 @@ app.controller("locationController", function ($scope, $http, $interval) {
                 }
 
                 for (j = 0; j < 12; j += 1) {
-                    //date = new Date($scope.hourlyForecast[i].DateTime);
+                    date = new Date($scope.hourlyForecast[j].EpochDateTime *1000);
                     
-                    //h = date.getUTCHours;
+                    h = String(date.getUTCHours());
                     
-                    //$scope.hour.push($scope.hourlyForecast[i].DateTime);
+                    
+                    
+                    value = h.concat(':00');
+                                       
+                    $scope.hour.push(value);
                 }
-
 
                 $scope.renderChart = {
                     chart: {
@@ -99,9 +103,8 @@ app.controller("locationController", function ($scope, $http, $interval) {
                     },
 
                     xAxis: {
-                        //categories: [$scope.hour[0], $scope.hour[1], $scope.hour[2], $scope.hour[3], $scope.hour[4], $scope.hour[5], $scope.hour[6], $scope.hour[7], $scope.hour[8], $scope.hour[9], $scope.hour[10], $scope.hour[11]]
                         
-                        categories: ['1am', '2am', '3am', '4am', '5am', '6am', '7am', '8am', '9am', '10am', '11am', '12pm']
+                        categories: [$scope.hour[0], $scope.hour[1], $scope.hour[2], $scope.hour[3], $scope.hour[4], $scope.hour[5], $scope.hour[6], $scope.hour[7], $scope.hour[8], $scope.hour[9], $scope.hour[10], $scope.hour[11]]
                     },
                     yAxis: {
                         title: {
