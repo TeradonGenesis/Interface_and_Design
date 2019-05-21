@@ -24,83 +24,108 @@ page via file:// -->
 
 <body>
     <div class="container" data-ng-controller="locationController">
-      
-       <!--Row for the user to input their location -->
+
+        <!--Row for the user to input their location -->
         <div class="row">
-           <div class = "col-xs-12 col-md-12">
-               Search for input location
-           </div>
-            
+            <div class="col-xs-12 col-md-12">
+                Search for input location
+            </div>
+
         </div>
-        
+
         <!--Row to show the weather in the input area and also its local time -->
-        <div class = "row">
-            <div class = "col-xs-12 col-md-12" data-ng-repeat = "area in currentLocation">
-                <p>Weather in {{area.EnglishName}}, {{area.AdministrativeArea.EnglishName}}, {{area.Country.EnglishName}} </p> 
+        <div class="row">
+            <div class="col-xs-12 col-md-12" data-ng-repeat="area in currentLocation">
+                <p>Weather in {{area.EnglishName}}, {{area.AdministrativeArea.EnglishName}}, {{area.Country.EnglishName}} </p>
                 <p>Local time: {{ clock | date:'MMM dd yyyy h:mm:ss a'}}</p>
             </div>
         </div>
-        
+
         <!--Shows the temperature and weather of the location -->
-        <div class = "row" data-ng-repeat = "condition in currentCondition">
-            <div class = "col-xs-12 col-md-6">
+        <div class="row" data-ng-repeat="condition in currentCondition">
+            <div class="col-xs-12 col-md-6">
                 <p>Temperature: {{condition.Temperature.Metric.Value}} {{condition.Temperature.Metric.Unit}}</p>
             </div>
-            <div class = "col-xs-12 col-md-6">
-                <p>Weather: {{condition.WeatherText}}</p> <br/>
-                
+            <div class="col-xs-12 col-md-6">
+                <p>Weather: {{condition.WeatherText}}</p> <br />
+
             </div>
         </div>
-        
+
         <!--Shows the wind speed, humidity and weather pressure of the location -->
-        <div class = "row" data-ng-repeat = "condition in currentCondition">
-            <div class = "col-xs-12 col-md-4">
-                <p>Wind speed: {{condition.Wind.Speed.Metric.Value}} {{condition.Wind.Speed.Metric.Unit}}</p> 
+        <div class="row" data-ng-repeat="condition in currentCondition">
+            <div class="col-xs-12 col-md-4">
+                <p>Wind speed: {{condition.Wind.Speed.Metric.Value}} {{condition.Wind.Speed.Metric.Unit}}</p>
             </div>
-            <div class = "col-xs-12 col-md-4">
+            <div class="col-xs-12 col-md-4">
                 <p>Humidity: {{condition.RelativeHumidity}} %</p>
             </div>
-            <div class = "col-xs-12 col-md-4">
-                <p>Pressure: {{condition.Pressure.Imperial.Value}} {{condition.Pressure.Imperial.Unit}}</p> 
-                <p>{{hour[0]}}</p>
+            <div class="col-xs-12 col-md-4">
+                <p>Pressure: {{condition.Pressure.Imperial.Value}} {{condition.Pressure.Imperial.Unit}}</p>
             </div>
         </div>
-        
+
         <!--12 hours of hourly forecast within a day using a highchart -->
-        <div class = "row">
-            <div class = "col-xs-12 col-md-12">
-                12 hours of hourly forecast in a chart
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
                 <line-Highchart chart={{renderChart}}></line-Highchart>
             </div>
         </div>
-        
+
         <!--Weather forecast for the next five days -->
-        <div class = "row">
-            <div class = "col-xs-4 col-md-2 col-md-offset-2">
-                Monday Forecast
-            </div>
-            <div class = "col-xs-4 col-md-2">
-                Tuesday Forecast
-            </div>
-            <div class = "col-xs-4 col-md-2">
-                Wednesday Forecast
-            </div>
-            <div class = "col-xs-6 col-md-2">
-                Thursday Forecast
-            </div>
-            <div class = "col-xs-6 col-md-2">
-                Friday Forecast
+
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <table class="table table-striped table-dark table-inverse">
+                    <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Minimum Temperature (C)</th>
+                            <th scope="col">Maximum Temperature</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">{{daily[0]}}</th>
+                            <td>{{minTemp[0]}}</td>
+                            <td>{{maxTemp[0]}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">{{daily[1]}}</th>
+                            <td>{{minTemp[1]}}</td>
+                            <td>{{maxTemp[1]}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">{{daily[2]}}</th>
+                            <td>{{minTemp[2]}}</td>
+                            <td>{{maxTemp[2]}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">{{daily[3]}}</th>
+                            <td>{{minTemp[3]}}</td>
+                            <td>{{maxTemp[3]}}</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">{{daily[4]}}</th>
+                            <td>{{minTemp[4]}}</td>
+                            <td>{{maxTemp[4]}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-        
+
+
+
         <!--The current condition in 24 hours using a highchart -->
-        <div class ="row">
-            <div class = "col-xs-12 col-md-12">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
                 24 hours of historical current condition chart
+                <allhour-Highchart chart={{renderallHourChart}}></allhour-Highchart>
             </div>
         </div>
-        
-        
+
+
 
     </div>
     <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
@@ -110,7 +135,7 @@ page via file:// -->
     <!-- Basic AngularJS -->
     <script src="js/angular.min.js"></script>
     <script src="js/units.js"></script>
-    
+
     <!-- HighChartJS -->
     <script src="code/highcharts.js"></script>
     <script src="code/modules/exporting.js"></script>
