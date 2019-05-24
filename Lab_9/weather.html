@@ -11,6 +11,7 @@ initial-scale=1.0" />
     <meta name="description" content="Bootstrap" />
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/weather.css" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5
 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the
@@ -25,17 +26,10 @@ page via file:// -->
 <body>
     <div class="container" data-ng-controller="locationController">
 
-        <!--Row for the user to input their location -->
-        <div class="row">
-            <div class="col-xs-12 col-md-12">
-                Search for input location
-            </div>
-
-        </div>
 
         <!--Row to show the weather in the input area and also its local time -->
         <div class="row">
-            <div class="col-xs-12 col-md-12" data-ng-repeat="area in currentLocation">
+            <div class="col-xs-12 col-md-12 well well-sm" data-ng-repeat="area in currentLocation">
                 <p>Weather in {{area.EnglishName}}, {{area.AdministrativeArea.EnglishName}}, {{area.Country.EnglishName}} </p>
                 <p>Local time: {{ clock | date:'MMM dd yyyy h:mm:ss a'}}</p>
             </div>
@@ -43,45 +37,63 @@ page via file:// -->
 
         <!--Shows the temperature and weather of the location -->
         <div class="row" data-ng-repeat="condition in currentCondition">
-            <div class="col-xs-12 col-md-6">
-                <p>Temperature: {{condition.Temperature.Metric.Value}} {{condition.Temperature.Metric.Unit}}</p>
-            </div>
-            <div class="col-xs-12 col-md-6">
-                <p>Weather: {{condition.WeatherText}}</p> <br />
+            <div class="col-xs-12 col-md-6 well well-sm">
 
+                <p>Temperature: {{condition.Temperature.Metric.Value}} °C</p>
+            </div>
+            <div class="col-xs-12 col-md-6 well well-sm">
+
+                <p>Weather: {{condition.WeatherText}}</p>
             </div>
         </div>
 
         <!--Shows the wind speed, humidity and weather pressure of the location -->
         <div class="row" data-ng-repeat="condition in currentCondition">
-            <div class="col-xs-12 col-md-4">
+            <div class="col-xs-12 col-md-4 well well-sm">
+
                 <p>Wind speed: {{condition.Wind.Speed.Metric.Value}} {{condition.Wind.Speed.Metric.Unit}}</p>
             </div>
-            <div class="col-xs-12 col-md-4">
+            <div class="col-xs-12 col-md-4 well well-sm">
+
                 <p>Humidity: {{condition.RelativeHumidity}} %</p>
             </div>
-            <div class="col-xs-12 col-md-4">
+            <div class="col-xs-12 col-md-4 well well-sm">
+
                 <p>Pressure: {{condition.Pressure.Imperial.Value}} {{condition.Pressure.Imperial.Unit}}</p>
             </div>
         </div>
 
-        <!--12 hours of hourly forecast within a day using a highchart -->
+        <br />
+
+        <!--12 hours of hourly forecast of temperature within a day using a highchart -->
         <div class="row">
             <div class="col-xs-12 col-md-12">
                 <line-Highchart chart={{renderChart}}></line-Highchart>
             </div>
         </div>
 
+        <br />
+
+        <!--12 hours of hourly forecast of windspeed within a day using a highchart -->
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <speed-Highchart chart={{windChart}}></speed-Highchart>
+            </div>
+        </div>
+
+        <br />
+
         <!--Weather forecast for the next five days -->
 
         <div class="row">
             <div class="col-xs-12 col-md-12">
                 <table class="table table-striped table-dark table-inverse">
+                    <caption>Weather forecast for the next five days</caption>
                     <thead>
                         <tr>
                             <th scope="col">Date</th>
-                            <th scope="col">Minimum Temperature (C)</th>
-                            <th scope="col">Maximum Temperature</th>
+                            <th scope="col">Minimum Temperature (°C)</th>
+                            <th scope="col">Maximum Temperature (°C)</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -106,7 +118,7 @@ page via file:// -->
                             <td>{{maxTemp[3]}}</td>
                         </tr>
                         <tr>
-                           <th scope="row">{{daily[4]}}</th>
+                            <th scope="row">{{daily[4]}}</th>
                             <td>{{minTemp[4]}}</td>
                             <td>{{maxTemp[4]}}</td>
                         </tr>
@@ -115,17 +127,22 @@ page via file:// -->
             </div>
         </div>
 
-
+        <br />
 
         <!--The current condition in 24 hours using a highchart -->
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                24 hours of historical current condition chart
                 <allhour-Highchart chart={{renderallHourChart}}></allhour-Highchart>
             </div>
         </div>
-
-
+        
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <p>Max tempearture in 24 hours: {{max}} °C</p>
+                <p>Min tempearture in 24 hours: {{min}} °C</p>
+            </div>
+        </div>
+        
 
     </div>
     <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
