@@ -92,7 +92,7 @@ app.controller("locationController", function ($scope, $http, $interval) {
     tick();
     $interval(tick, 1000);
 
-    $http.get("http://dataservice.accuweather.com/locations/v1/cities/search?apikey=GXLddRJ2LzqKczN0MtLG9vvLCXzzVAKa&q=Kuching%2C%20Sarawak")
+    $http.get("http://dataservice.accuweather.com/locations/v1/cities/search?apikey=bQdVIsYVQdL1dYzZT0bZ8NQID26RZLB7&q=kuching%2C%20sarawak")
         .then(
             function (response) {
                 $scope.currentLocation = response.data;
@@ -100,7 +100,7 @@ app.controller("locationController", function ($scope, $http, $interval) {
 
             });
 
-    $http.get("http://dataservice.accuweather.com/currentconditions/v1/230204?apikey=GXLddRJ2LzqKczN0MtLG9vvLCXzzVAKa&details=true")
+    $http.get("http://dataservice.accuweather.com/currentconditions/v1/230204?apikey=bQdVIsYVQdL1dYzZT0bZ8NQID26RZLB7&details=true")
         .then(
             function (response) {
                 $scope.currentCondition = response.data;
@@ -108,7 +108,7 @@ app.controller("locationController", function ($scope, $http, $interval) {
 
             });
 
-    $http.get("http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/230204?apikey=GXLddRJ2LzqKczN0MtLG9vvLCXzzVAKa&details=true&metric=true")
+    $http.get("http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/230204?apikey=bQdVIsYVQdL1dYzZT0bZ8NQID26RZLB7&details=true&metric=true")
         .then(
             function (response) {
                 $scope.hourlyForecast = response.data;
@@ -232,7 +232,7 @@ app.controller("locationController", function ($scope, $http, $interval) {
 
             });
     
-     $http.get("http://dataservice.accuweather.com/forecasts/v1/daily/5day/230204?apikey=GXLddRJ2LzqKczN0MtLG9vvLCXzzVAKa&metric=true")
+     $http.get("http://dataservice.accuweather.com/forecasts/v1/daily/5day/230204?apikey=bQdVIsYVQdL1dYzZT0bZ8NQID26RZLB7&details=true&metric=true")
         .then(
             function (response) {
                 $scope.dailyForecast = response.data;
@@ -310,7 +310,7 @@ app.controller("locationController", function ($scope, $http, $interval) {
 
             });
     
-    $http.get("http://dataservice.accuweather.com/currentconditions/v1/230204/historical/24?apikey=GXLddRJ2LzqKczN0MtLG9vvLCXzzVAKa")
+    $http.get("http://dataservice.accuweather.com/currentconditions/v1/230204/historical/24?apikey=bQdVIsYVQdL1dYzZT0bZ8NQID26RZLB7&details=true")
         .then(
             function (response) {
                 $scope.allHourly = response.data;
